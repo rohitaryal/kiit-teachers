@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+
+.card-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
+}
+
+.card-container .card {
+    font-size: small;
+    box-shadow: 0 0 10px black;
+    padding: 1rem;
+    background-color: transparent;
+    flex-direction: column;
+    position: relative;
+    border-radius: .5rem;
+    display: flex;
+    cursor: pointer;
+    transition-duration: .2s;
+    grid-auto-flow: dense;
+}
+
+
+.card-container .card:hover {
+    transform: scale(1.05);
+}
+
+.card-container .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(16, 154, 240);
+    border: 1px solid white;
+    z-index: -1;
+    clip-path: circle(50% at top right);
+    border-radius: .5rem;
+
+}
+
+.card-container .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid white;
+    z-index: -2;
+    clip-path: circle(50% at bottom left);
+    border-radius: .5rem;
+}
+
+.card-container .card .user-profile {
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 0.5rem;
+}
+
+.card-container .user-name {
+    font-size: large;
+    font-weight: bolder;
+    margin: .5rem 0 0 0;
+}
+
+.card-container .job-title {
+    font-size: small;
+    color: rgb(67, 66, 66);
+}
+
+.card-container .user-description {
+    margin: .5rem 0;
+    color: rgba(0, 0, 0, 0.695);
+}
+
+.card-container .user-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.card-container .user-stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.06rem;
+    margin-bottom: .2rem;
+}
+
+.card-container .user-stats .mdi {
+    font-size: large;
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+.card-container .buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+button {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+button:hover {
+    filter: invert();
+}
+
+.card-container .buttons button:nth-child(2) {
+    margin-left: 1rem;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+
+}
+
+.card-container .subjects {
+    margin: 0.5rem 0 0 1rem;
+    list-style-type: circle;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.card-container .buttons button:nth-child(2):hover {
+    background-color: black;
+    color: white;
+}
