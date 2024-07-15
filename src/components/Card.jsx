@@ -8,7 +8,7 @@ const Card = ({ json }) => {
             <div className="card-container">
                 {
                     json.map(teacher => {
-                        if (value != null && teacher.name?.includes(value)) {
+                        if (value != null && teacher.name?.toLowerCase().includes(value)) {
                             return (
                                 <div className="card" key={crypto.randomUUID()}>
                                     <div className="user-profile" style={{
