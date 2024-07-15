@@ -32,7 +32,7 @@ const Card = ({ json }) => {
                                     <ul className="subjects">
                                         {
                                             teacher.subjects.map(sub => {
-                                                return <li>{sub}</li>
+                                                return <li key={crypto.randomUUID()}>{sub}</li>
                                             })
                                         }
                                     </ul>

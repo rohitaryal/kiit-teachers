@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
-import "./App.css";
+import "./style/App.css";
 
 const App = () => {
   const [dataLoaded, setDataLoaded] = useState(false);

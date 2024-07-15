@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgba(204, 255, 0, 0.197);
+    border-radius: 0 0 1rem 1rem;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.search-container input {
+    font-size: large;
+    flex: 1;
+    margin-right: 1rem;
+    padding: 8px 16px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.search-container select {
+    padding: .5rem;
+    border: 2px solid blueviolet;
+    border-radius: .5rem;
+    background-color: transparent;
+}
