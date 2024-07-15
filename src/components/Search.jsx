@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import "../style/Search.css";
 
-const Search = () => {
+const searchContext = createContext(null);
+export const filterText = () => useContext(searchContext);
+
+const Search = ({ children }) => {
     const sections = [
         1,
         2,
@@ -59,20 +62,22 @@ const Search = () => {
         54,
         55
     ]
-
-    const [filter, setFilter] = useState(0);
+    const [filter, setFilter] = useState("");
     console.log("HI");
 
-    return <div className="search-container">
-        <input type="text" placeholder="Search Here" onChange={(e) => setFilter(e.target.value)} />
-        <select name="section" id="section">
-            {
-                sections.map(section => {
-                    return <option key={crypto.randomUUID()}>CSE-{section}</option>;
-                })
-            }
-        </select>
-    </div>
+    return <searchContext.Provider value={filter?.toLowerCase()}>
+        <div className="search-container">
+            <input type="text" placeholder="Search Here" onChange={(e) => setFilter(e.target.value)} />
+            <select name="section" id="section">
+                {
+                    sections.map(section => {
+                        return <option key={crypto.randomUUID()}>CSE-{section}</option>;
+                    })
+                }
+            </select>
+        </div>
+        {children}
+    </searchContext.Provider>
 }
 
-export default Search;
+export { Search };
